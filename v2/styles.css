@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/* 
+  Reset CSS 
+  Youtube 👉 https://www.youtube.com/watch?v=Foieq2jTajE 
+  Github  👉 https://github.com/eduardofierropro/Reset-CSS
+*/
+
+:root {
+  --negro: #393939;
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  display: block;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+a{font-weight: bold; color: white;}
+
+/*HEADER*/
+
+.header{
+    width: 100%;
+    padding: 1em;
+    background-color:#75C5F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-flow: row wrap;
+    position: fixed;
+}
+
+
+.header .button{
+    
+    display: none;
+}
+
+.header .svg{
+    width: 2em;
+    height: 2em;
+    fill: white;
+}
+
+.header ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header .li{
+    margin: 0 .5em;
+}
+
+/*Section1*/
+
+#section1{
+    padding-top: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("img/fondo2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+}
+
+#section1 .container{
+  display: flex;
+  gap: 50px;
+  
+}
+
+
+#section1 .chica{
+    
+    background-image: url("img/chica-banner.png");
+    background-position: center center;
+    background-size: cover;   
+    height: 630px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+#section1 h1{font-size: 3.5em; font-weight: bold; padding-bottom: 20px;}
+
+p{font-size: 18px;}
+h2{font-size: 1.5em;margin-bottom: 10px;}
+
+
+
+#section1 .text{
+    
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    
+}
+
+
+#section1 .color-text{
+    color: #75C5F0;
+    font-weight: bold;
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+    .header .button{
+        display: block;
+        cursor: pointer;
+    }
+
+    #section1 .container{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header .navbar{
+        width: 100%;
+        height: 0;
+        pointer-events: none;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #section1 .chica{
+      
+    height: 400px;
+  }
+
+
+    .header .navbar.activo{
+        height: 50vh;
+        pointer-events: auto;  
+    }
+
+    .header .ul{
+        flex-direction: column;
+    }
+
+    .header .li{
+        margin: 1rem 0;
+    }
+}
